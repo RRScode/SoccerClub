@@ -1,61 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Goal Getters Futsal League</title>
-    <link rel="icon" href="./assets/iconSoccerBall_48x48.png">
-    <link rel="stylesheet" href="Style.css">
-  </head>
-  
-  <body>
-    <!-- <script src="index.js"></script> -->
-    <nav>   
-        <div class="navItem">
-          <a href="#"><img style="height:75px" src="./assets/GGlogoGold_black_1500x250.png" alt="Logo:Goal Getters"/></a>
-        </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Goal Getters Futsal League</title>
+  <link rel="icon" href="./assets/iconSoccerBall_48x48.png">
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+  <!-- <script src="index.js"></script> -->
+  <nav>
+    <div id="navRow1">
+      <div class="navItem">
+        <picture>
+          <source style="height: 40px" srcset="./assets/iconGGgold_black_500x500.png" media="(max-width: 1100px)">
+          <img style="height: 75px" src="./assets/GGlogoGold_black_1500x250.png" alt="Goal Getters Logo">
+        </picture>
+      </div><!--navItem-->
+      
+      <div class="navItem">
+        <div id="navLink">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Register</a>
+          <a href="#">contact</a>
+        </div><!--navLink-->
+
+        <div class="navLogoIcon">
+          <a href="#"><img src="./assets/iconInstagramGold_clear_50x50.png" alt="instagram icon linking to instagram"></a>
+          <a href="#"><img src="./assets/iconFacebookGold_clear_50x50.png" alt="facebook icon linking to facebook"></a>
+          <a href="#"><img src="./assets/iconTwitterGold_clear_50x50.png" alt="twitter icon linking to twitter"></a>
+        </div><!--navLogoIcon-->
+        
+        <div id="dropdown">
+          <a id="dropdownIcon" onClick="showList()">&#9776;</a>
+        </div><!--dropdown-->
+
+      </div><!--navItem-->
+    </div><!--navRow1-->
+      
+    <div id="navRow2">
+      <div ul id="dropdownContent">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Register</a>
+        <a href="#">contact</a>
+      </div>
+    </div>
     
-        <div class="navItem">
-            <ul class="navLink">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">contact</a></li>
-            </ul>
+    <script>
+      const showList = () => {
+        var x = document.getElementById("dropdownContent");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
 
-            <ul class="navIcon">
-                    <li><img src="./assets/iconInstagramGold_clear_50x50.png" alt="instagram icon linking to instagram"></li>
-                    <li><img src="./assets/iconFacebookGold_clear_50x50.png" alt="facebook icon linking to facebook"></li>
-                    <li><img src="./assets/iconTwitterGold_clear_50x50.png" alt="twitter icon linking to twitter"></li>
-            </ul>
-        </div>
-    </nav>
+          } else {
+            x.style.display = "none";
+            }
+      }
+    </script>
 
-    <header>
-        <h1>Register your child today for a youth soccer clinic</h1>
-        <h2>All skill levels welcome.</h2>
-        <button>Find a program</button>
-    </header>
+  </nav>
 
-    <section>
-        <div class="subSection">
-          <h2>Business Description</h2>
-          <p>Halftime World Cup chip yellow card number 10 red card hat trick brace ball upper 90 one-two UEFA European Championship soccer midfielder. Hat trick pitch three-five-two four-four-two forward UEFA European Championship brace ball red card one-two yellow card goal referee midfielder goalie. </p>
-        </div>
-    </section>
+  <header>
+    <h1>Youth Soccer Clinics - Register Today</h1>
+    <h2>All skill levels welcome.</h2>
+    <button>Find a program</button>
+  </header>
 
-    <section>
-      <div class="subSection">
-        <h2>Informational Paragraph</h2>
-        <p>Hat trick three-five-two defender referee number 10 upper 90 center-half halftime UEFA European Championship World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip four-four-two striker number 10 brace halftime three-five-two pitch referee red card. Hat trick ball striker referee soccer halftime World Cup forward four-four-two one-two goalie three-five-two center-half yellow card number 10 UEFA European Championship. </p>
-      </div>  
-      <div class="subSection">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/PbdeHoDJZIE?si=NtzmOM4SJbxt4H56" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>        
-    </section>
+  <section>
+    <div class="subSection">
+      <h2>Business Description</h2>
+      <p>Halftime World Cup chip yellow card number 10 red card hat trick brace ball upper 90 one-two UEFA European
+        Championship soccer midfielder. Hat trick pitch three-five-two four-four-two forward UEFA European
+        Championship brace ball red card one-two yellow card goal referee midfielder goalie. </p>
+    </div>
+  </section>
 
+  <section>
+    <div class="subSection">
+      <h2>Informational Paragraph</h2>
+      <p>Hat trick three-five-two defender referee number 10 upper 90 center-half halftime UEFA European Championship
+        World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup
+        three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA
+        European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip
+        four-four-two striker number 10 brace halftime three-five-two pitch referee red card. Hat trick ball striker
+        referee soccer halftime World Cup forward four-four-two one-two goalie three-five-two center-half yellow card
+        number 10 UEFA European Championship. </p>
+    </div>
 
+    <!-- <div class="subSection">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/PbdeHoDJZIE?si=NtzmOM4SJbxt4H56"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div> -->
+  </section>
 
-  </body>
+  <footer>
+  </footer>
+</body>
+
 </html>
