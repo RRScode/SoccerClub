@@ -1,166 +1,249 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
 /* global style */
-body{
-    padding:0;
-    margin:0;
-}
-/* 
-    background-image:url("./assets/FPOsoccerBanner.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-*/    
+    body{
+        padding:0;
+        margin:0;
+        
+    }
+        
+        
+    :root {
+        --blue: #1e90ff;
+        --white: #ffffff;
+        --gold: #cfb53b;
+        --silver: #d3d3d3;
+        --black: #000000; 
+    }
+
+
+    a:link, a:visited {
+        color: var(--gold);
+        text-decoration: none;
+        font-family: "Russo One";
+    }
+
+
+    a:hover{
+        color: var(--silver);
+        text-decoration: none;
+    }
+
+    h1{
+        display:flex;
+        font-family: 'Russo One';
+        font-size:50px;
+        padding:10px;
+        margin:10px;
+    }
     
-:root {
-    --blue: #1e90ff;
-    --white: #ffffff;
-    --gold: #cfb53b;
-    --silver: #d3d3d3;
-    --black: #000000; 
-}
+    h2{
+        display:flex;
+        font-family: 'Russo One';
+        font-size:30px;
+        padding:10px;
+        margin:10px;
+    }
 
+    .hidden{
+        display:none;
+    }
+    .showing{
+        display:flex;
+        justify-content: flex-end;
 
-a:link, a:visited {
-    color: var(--gold);
-    text-decoration: none;
-    font-family: "Russo One";
-}
-
-
-a:hover{
-    color: var(--silver);
-    text-decoration: none;
-}
-
-h1{
-    display:flex;
-    font-family: 'Russo One';
-    font-size:30px;
-    padding:10px;
-    margin:10px;
-}
-
+    }
 
 /* nav bar style */
-nav{
-    width:100%;
-    position:fixed;
-    background-color: var(--black);
-}
-
-#navRow1 {
-    display:flex;
-    width: 100%;
-    justify-content: space-between;
-    color: #ffffff;
-    background-color: var(--black);
-}
-
-.navItem{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navItem picture{
-    align-self: flex-start;
-}
-
-#navLink{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
+    nav{
+        width:100%;
+        position: fixed;
+        background-color: var(--black);
+    }
 
 
-#navLink a{
-    display:flex;
-    margin-right: 40px;
-    font-family: 'Russo One';
-    color: var(--gold);
-    font-size: 16px;
-}
+/* navRow1 */
+    #navRow1 {
+        display:flex;
+        width: 100%;
+        justify-content: space-between;
+        color: #ffffff;
+        background-color: var(--black);
+    }
 
-#dropdown{
-    display:none;
-    justify-content: center;
-    text-align: center;
-}
+    .navItem{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-#navRow2{
-    text-align: center;
-}
+    .navItem picture{
+        align-self: flex-start;
+    }
 
-#dropdownIcon{
-    color: var(--gold);
-    font-size: 35px;
-    padding-right:25px;
-}
-
-#dropdownIcon:hover{
-    color: var(--silver);
-}
-
-#dropdownContent{
-    display:none;
-    /* text-decoration: none; */
-    flex-direction: column;
-}
-
-#dropdownContent a{
-    padding: 5px;
-}
+    #navLink{
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
 
-                @media screen and (max-width: 750px) {
-                    #navLink{
-                        display:none;
-                    }
-                    
-                    #dropdown{
-                        display:flex;
+    #navLink a{
+        display:flex;
+        margin-right: 40px;
+        font-family: 'Russo One';
+        color: var(--gold);
+        font-size: 16px;
+    }
 
-                    }
+    
+    .social{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    
+    .social a {
+        display:flex;
+        margin-right:25px;   
+    }
+    
+    .social img{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #navDropdown{
+        display:none;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    #navDropdownIcon{
+        color: var(--gold);
+        font-size: 30px;
+        padding-right:25px;
+        padding-bottom:4px;
+    }
+    
+    #navDropdownIcon:hover{
+        color: var(--silver);
+    }
+    
+    #navDropdownContent{
+        display:flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    
+    #navDropdownContent a{
+        padding: 5px;
+    }
 
+
+
+/* navRow2 */
+    #navRow2{
+        justify-content: space-between;
+    }
+    
+    .dropdownSocial{
+        display:none;
+    }
+
+    .dropdownSocial img{
+        padding-left:22px;
+        width: 30px;
+        height: 30px;
+    }
+
+            @media screen and (max-width: 750px) {
+                #navLink{
+                    display:none;
                 }
- 
-                @media screen and (min-width: 751px) {
-                    #dropwdown, #navRow2{
-                        display:none;
-                    }
+                #navDropdown{
+                    display:flex;
+                }
+                #navRow2{
+                    justify-content: flex-end;
+                }
+            }
+
+            @media screen and (min-width: 751px) {
+                #navDropwdown, #navRow2{
+                    display:none;
+                }
+            }
+
+            @media screen and (max-width: 420px){
+                .navItem .social{
+                    display:none;
+                }
+                #navRow2{
+                    justify-content: space-between;
+                    align-items: flex-start;
                 }
 
-
-
-                @media screen and (max-width: 420px){
-                    .navItem .navLogoIcon{
-                        display:none;
-                    }
+                .dropdownSocial{
+                    display:flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .navDropdownContent{
+                    display:flex;
+                    align-items: flex-start;
                 }
 
-.navLogoIcon{
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
-}
-
-.navLogoIcon a {
-    display:flex;
-    margin-right:25px;   
-}
-
-.navLogoIcon img{
-width: 40px;
-height: 40px;
-}
+            }
 
 
-header{
-    padding-top:200px;
-    padding-bottom:200px;
-    padding-left:auto;
-    padding-right:auto;
-    color: var(--gold);
-    background-color: rgba(0, 0, 0, .5);
-}
+/* main container style*/
+    header{
+        background-image: url("./assets/FPOsoccerBanner2.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
+    header .heroWrapper{
+        background-color: rgba(0, 0, 0, .6);
+    }
+    
+    header section{
+        max-width: 1100px;
+        margin:auto;
+        padding-top:200px;
+        padding-bottom:200px;
+        color: var(--gold);
+    }
+
+    section{
+        max-width: 1100px;
+        margin:auto;
+        
+    }
+
+    .subSection{
+        padding:20px;
+
+    }
+
+
+    .carousel{
+        width:100%;
+        position:relative;
+    }
+
+    .slide{
+        position:absolute;
+        inset:0;
+        opacity:0;
+    }
+
+    .slide[data-active]{
+        opacity:1;
+    }

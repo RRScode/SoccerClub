@@ -29,79 +29,144 @@
           <a href="#">contact</a>
         </div><!--navLink-->
 
-        <div class="navLogoIcon">
+        <div class="social">
           <a href="#"><img src="./assets/iconInstagramGold_clear_50x50.png" alt="instagram icon linking to instagram"></a>
           <a href="#"><img src="./assets/iconFacebookGold_clear_50x50.png" alt="facebook icon linking to facebook"></a>
           <a href="#"><img src="./assets/iconTwitterGold_clear_50x50.png" alt="twitter icon linking to twitter"></a>
         </div><!--navLogoIcon-->
         
-        <div id="dropdown">
-          <a id="dropdownIcon" onClick="showList()">&#9776;</a>
-        </div><!--dropdown-->
+        <div id="navDropdown">
+          <a id="navDropdownIcon" onClick="showNavList()">&#9776;</a>
+        </div><!--navDropdown-->
 
       </div><!--navItem-->
+
     </div><!--navRow1-->
       
-    <div id="navRow2">
-      <div ul id="dropdownContent">
+
+    <div id="navRow2" class="showing, hidden">
+      <div class="dropdownSocial">
+        <a href="#"><img src="./assets/iconInstagramGold_clear_50x50.png" alt="instagram icon linking to instagram"></a>
+        <a href="#"><img src="./assets/iconFacebookGold_clear_50x50.png" alt="facebook icon linking to facebook"></a>
+        <a href="#"><img src="./assets/iconTwitterGold_clear_50x50.png" alt="twitter icon linking to twitter"></a>
+      </div><!--navLogoIcon-->
+
+      <div id="navDropdownContent">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Register</a>
         <a href="#">contact</a>
       </div>
-    </div>
+
+    </div><!--navRow2-->
     
-    <script>
-      const showList = () => {
-        var x = document.getElementById("dropdownContent");
-        if (x.style.display === "none") {
-            x.style.display = "flex";
-
-          } else {
-            x.style.display = "none";
-            }
-      }
-    </script>
-
   </nav>
 
   <header>
-    <h1>Youth Soccer Clinics - Register Today</h1>
-    <h2>All skill levels welcome.</h2>
-    <button>Find a program</button>
+    <div class="heroWrapper">  
+      <section>
+        <h1>Youth Soccer Clinics - Register Today</h1>
+        <h2>All skill levels welcome.</h2>
+        <button>Find a program</button>
+      </section>
+    </div>
   </header>
+  
+ 
+  <main>
+    <section>
+      <div class="subSection">
+        <h2>Informational Paragraph</h2>
+        <p>
+          Hat trick three-five-two defender referee number 10 upper 90 center-half halftime UEFA European Championship
+          World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup
+          three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA
+          European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip
+          four-four-two striker number 10 brace halftime three-five-two pitch referee red card. Hat trick ball striker
+          referee soccer halftime World Cup forward four-four-two one-two goalie three-five-two center-half yellow card
+          number 10 UEFA European Championship.
+        </p>
+      </div>
+    </section>
+    
+    <section>
+      <div class="subSection">
+        <h2>Business Description</h2>
+        <p>
+          Hat trick three-five-two defender referee number 10 upper 90 center-half halftime UEFA European Championship
+          World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup
+          three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA
+          European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip
+          four-four-two striker number 10 brace halftime three-five-two pitch referee red card. Hat trick ball striker
+          referee soccer halftime World Cup forward four-four-two one-two goalie three-five-two center-half yellow card
+          number 10 UEFA European Championship. World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup
+          three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA
+          European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip
+          four-four-two striker number 10 brace
+        </p>
+      </div>
 
-  <section>
-    <div class="subSection">
-      <h2>Business Description</h2>
-      <p>Halftime World Cup chip yellow card number 10 red card hat trick brace ball upper 90 one-two UEFA European
-        Championship soccer midfielder. Hat trick pitch three-five-two four-four-two forward UEFA European
-        Championship brace ball red card one-two yellow card goal referee midfielder goalie. </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="subSection">
-      <h2>Informational Paragraph</h2>
-      <p>Hat trick three-five-two defender referee number 10 upper 90 center-half halftime UEFA European Championship
-        World Cup forward midfielder pitch chip four-four-two yellow card. Midfielder chip red card goal World Cup
-        three-five-two defender brace four-four-two ball halftime goalie one-two yellow card forward striker UEFA
-        European Championship. Goal soccer midfielder UEFA European Championship one-two upper 90 forward chip
-        four-four-two striker number 10 brace halftime three-five-two pitch referee red card. Hat trick ball striker
-        referee soccer halftime World Cup forward four-four-two one-two goalie three-five-two center-half yellow card
-        number 10 UEFA European Championship. </p>
-    </div>
-
-    <!-- <div class="subSection">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/PbdeHoDJZIE?si=NtzmOM4SJbxt4H56"
+      <div class="subSection">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PbdeHoDJZIE?si=NtzmOM4SJbxt4H56"
         title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
-    </div> -->
-  </section>
+      </div> 
+    </section>
 
+    <section>
+      <div class="carousel">
+        <button class="carousel-button prev">&#8656;</button>
+        <button class="carousel-button next">&#8658;</button>
+        <div id="gallery">
+        </div>
+      </div>  
+    </section>
+
+
+  </main>
+        
   <footer>
   </footer>
 </body>
+
+<script>
+  const showNavList = () => {
+    var x = document.getElementById("navRow2");
+    x.classList.toggle("hidden");
+    x.classList.toggle("showing")
+  }
+
+  const instaImgs = [
+    "https://media.gettyimages.com/id/200332236-001/photo/young-male-football-player-on-pitch-low-section-night.jpg?s=612x612&w=0&k=20&c=6-DJ93_LZfBsG7Rg6Qz8Fo56P2_ud-PTT0Z5JZOZseU=",
+    "https://media.gettyimages.com/id/470755388/photo/fans-at-stadium.jpg?s=612x612&w=0&k=20&c=sBX29xUllKFdvV3LkHAiHDNp9oDxMW40zfXxOIqU-Tg=",
+    "https://media.gettyimages.com/id/497811221/photo/shooting-power.jpg?s=612x612&w=0&k=20&c=PRbtGKK-EL_x4U7-37cg_RRDxC4-o4KLfkhsCCOy4SI=",
+    "https://media.gettyimages.com/id/1360149924/photo/male-soccer-match.jpg?s=612x612&w=0&k=20&c=DgJUuO5kBdFfaHY679DWFDXIngw41GWoGNrvfBwCj4Q=",
+    "https://media.gettyimages.com/id/557920441/photo/close-up-of-boy-kicking-soccer-ball.jpg?s=612x612&w=0&k=20&c=aj-_JUiBIc4_3Y8AxTCzCB34syyA9Ayq7Qy3OOwKYr8=",
+    "https://media.gettyimages.com/id/860880772/photo/determined-bicycle-kick-on-a-soccer-match.jpg?s=612x612&w=0&k=20&c=kRENeJjZP9srSCpM4UwSQN45TLnADccYDfcdaUpVZHI=",
+    "https://media.gettyimages.com/id/1178753201/photo/a-soccer-player-celebrates-a-goal.jpg?s=612x612&w=0&k=20&c=Poz1uIjc4opwPgOHBIPKOypQ0vpFmsAIQdrtd4zJ5Nc=",
+    "https://media.gettyimages.com/id/1097457362/photo/skills-with-the-soccer-ball.jpg?s=612x612&w=0&k=20&c=Wl63eH1DJnDKzFQURwNCu807PWDCyThETfmd1Fl5b64=",
+    "https://media.gettyimages.com/id/1049704540/photo/womens-soccer-player.jpg?s=612x612&w=0&k=20&c=GmqHxRfeD7Xjx0tJkvz4tGVy4jrCLByTiWyCnNr57ws=",
+    "https://media.gettyimages.com/id/486401400/photo/children-chasing-soccer-ball-during-a-match.jpg?s=612x612&w=0&k=20&c=Ti414DbxkG8PfV7tzzM-9CmdDh2CgWGQ-fxsU1RA2So="
+  ];
+  
+
+    instaImgs.map((i) => {
+      //create img elemenet
+      const li = document.create
+      const galleryImg = document.createElement("img");
+      
+      // //set src attribute of img element
+      galleryImg.setAttribute("src", i);
+      galleryImg.setAttribute("class", "slide");
+      
+      // //append img as child of #gallery section
+      const gallery = document.getElementById("gallery");
+      gallery.appendChild(galleryImg);
+    });
+
+    document.getElementById("gallery").firstChild.setAttribute("data-active", "true");
+
+</script>
 
 </html>
