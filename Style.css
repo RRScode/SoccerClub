@@ -51,10 +51,13 @@
     }
 
     p{
-        display:flex;
+        
         font-family:"Roboto";
         padding:20px;
+        padding-top:0;
         margin:0;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .hidden{
@@ -136,6 +139,7 @@
         font-size: 30px;
         padding-right:25px;
         padding-bottom:4px;
+        cursor: pointer;
     }
     
     #navDropdownIcon:hover{
@@ -244,13 +248,13 @@
     }
 
     header button:hover{
+
         background-color: var(--silver);
     }
-
     section{
         max-width: 1100px;
         margin:auto;
-        padding-bottom:30px;
+        
     }
 
     .subsection{
@@ -281,13 +285,14 @@
     .YTcontainer{
         display: flex;
         justify-content: center;
-        padding-top: 5%;
+        padding-top: 20px;
     }
 
     .youtube{
         aspect-ratio: 16/9;
         width: 90%;
         max-width:500px;
+        padding-bottom:40px;
       }
       
 
