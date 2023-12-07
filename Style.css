@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Russo+One&display=swap');
 
 *, *::before, *::after{
     box-sizing:border-box;
@@ -37,16 +37,24 @@
         display:flex;
         font-family: 'Russo One';
         font-size:50px;
-        padding:10px;
-        margin:10px;
+        padding:20px;
+        margin:0;
     }
     
     h2{
         display:flex;
         font-family: 'Russo One';
         font-size:30px;
-        padding:10px;
-        margin:10px;
+        padding:20px;
+        margin:0;
+
+    }
+
+    p{
+        display:flex;
+        font-family:"Roboto";
+        padding:20px;
+        margin:0;
     }
 
     .hidden{
@@ -218,32 +226,117 @@
         margin:auto;
         padding-top:200px;
         padding-bottom:200px;
+        padding-left:20px;
+        padding-right:20px;
         color: var(--gold);
+    }
+
+    header button{
+        border-radius: 5px;
+        background-color: var(--gold);
+        color: var(--black);
+        font-family: 'Russo One';
+        font-size: 25px;
+        padding: 15px;
+        margin:20px;
+        cursor: pointer;
+        
+    }
+
+    header button:hover{
+        background-color: var(--silver);
     }
 
     section{
         max-width: 1100px;
         margin:auto;
+        padding-bottom:30px;
+    }
+
+    .subsection{
+        display:flex;
+        justify-content: space-between;
+    }
+    
+    
+    
+    .col-1{
+        width:100%;
+    }
+    
+    .col-2{
+        width:48%;
         
     }
 
-    .subSection{
-        padding:20px;
-
+        @media screen and (max-width: 800px){
+            .subsection{
+                flex-direction: column;
+            }
+            .col-2{
+                width:100%;
+            }
+        }
+    
+    .YTcontainer{
+        display: flex;
+        justify-content: center;
+        padding-top: 5%;
     }
 
+    .youtube{
+        aspect-ratio: 16/9;
+        width: 90%;
+        max-width:500px;
+      }
+      
 
-    .carousel{
-        width:100%;
-        position:relative;
+
+
+    /* Gallery Style */
+    
+    .gallery{
+        display:flex;
+        justify-content: center;
+        max-width:1100px;
+        overflow:auto;
+        margin:auto;
     }
 
-    .slide{
-        position:absolute;
-        inset:0;
-        opacity:0;
+    .gallery img {
+        width:100px;
     }
 
-    .slide[data-active]{
-        opacity:1;
+    .modal {
+        z-index: 3;
+        display: none;
+        padding-top: 100px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4)
+    }
+
+    .modal-content {
+        margin: auto;
+        background-color: #fff;
+        position: relative;
+        padding: 0;
+        outline: 0;
+        max-width: 70%;
+        animation: animatezoom 0.6s
+    }
+
+    @keyframes animatezoom {
+        from {
+            transform: scale(0)
+        }
+    
+        to {
+            transform: scale(1)
+        }
     }
