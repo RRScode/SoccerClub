@@ -233,37 +233,40 @@
   
   
   let prevImg = () => {
-    // let prev = document.getElementById("prevImg");
-    // let prevFilter1 = photos.filter((x) => {return(x.src == prev.src)});
-    // let prevId = prevFilter1[0].id += -1;
-    // if (prevId == 0){
-    //   prevId = photos.length;
-    // } else { prevId = prevId};
-    // let prevfilter2 = photos.filter((x) => {return(x.id == prevId)});
-    // let prevSrc = prevfilter2[0].src;
-    // prev.setAttribute("src", prevSrc);
+    let prev = document.getElementById("prevImg");
+    let prevFilter = photos.filter((x) => {
+      return(x.src == prev.src);
+    });
+    let currentPrevImg = prevFilter[0];
+    let newPrevPosition;
+    if (currentPrevImg.id - 2 < 0){
+      newPrevPosition = photos.length - 1;
+    } else {newPrevPosition = currentPrevImg.id - 2;};
+    prev.setAttribute("src", photos[newPrevPosition].src);
 
 
-    // let active = document.getElementById("activeImg");
-    // let activefilter1 = photos.filter((x) => {return(x.src == active.src)});
-    // let activeId = activefilter1[0].id += -1;
-    // if (activeId == 0){
-    //   activeId = photos.length;
-    // } else { activeId = activeId};
-    // let activefilter2 = photos.filter((x) => {return(x.id == activeId)});
-    // let activeSrc = activefilter2[0].src;
-    // active.setAttribute("src", activeSrc);
-
+    let active = document.getElementById("activeImg");
+    let activeFilter = photos.filter((x) => {
+      return(x.src == active.src);
+    });
+    let currentActiveImg = activeFilter[0];
+    let newActivePosition;
+    if (currentActiveImg.id - 2 < 0){
+      newActivePosition = photos.length - 1;
+    } else {newActivePosition = currentActiveImg.id - 2;};
+    active.setAttribute("src", photos[newActivePosition].src);
 
     let next = document.getElementById("nextImg");
-    let nextfilter1 = photos.filter((x) => {return(x.src == next.src)});
-    let nextId = nextfilter1[0].id += -1;
-    if (nextId == 0){
-      nextId = photos.length;
-    } else { nextId = nextId};
-    let nextfilter2 = photos.filter((x) => {return(x.id == nextId)});
-    let nextSrc = nextfilter2[0].src;
-    next.setAttribute("src", nextSrc);
+    let nextFilter = photos.filter((x) => {
+      return(x.src == next.src);
+    });
+    let currentNextImg = nextFilter[0];
+    let newNextPosition;
+    if (currentNextImg.id - 2 < 0){
+      newNextPosition = photos.length - 1;
+    } else {newNextPosition = currentNextImg.id - 2;};
+    next.setAttribute("src", photos[newNextPosition].src);
+   
   }
 
   let nextImg = () => { }
@@ -277,13 +280,13 @@
   }
   
   
-  // let modalImg = () => {
-  //   console.log("itworks");
-  //   let activeImg = document.getElementById("activeImg")
-  //   let imgX = document.getElementById("imgX");
-  //   let src = imgX.setAttribute("src", activeImg.src);
-  //   let modal = document.getElementById("modal").style.display = "block";
-  // }
+  let modalImg = () => {
+    console.log("itworks");
+    let activeImg = document.getElementById("activeImg")
+    let imgX = document.getElementById("imgX");
+    let src = imgX.setAttribute("src", activeImg.src);
+    let modal = document.getElementById("modal").style.display = "block";
+  }
   
   
 </script>
