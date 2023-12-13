@@ -185,7 +185,7 @@
       src: "https://media.gettyimages.com/id/1049704540/photo/womens-soccer-player.jpg?s=612x612&w=0&k=20&c=GmqHxRfeD7Xjx0tJkvz4tGVy4jrCLByTiWyCnNr57ws="
     },
 
-    {
+    { 
       id: 3,
       src: "https://media.gettyimages.com/id/200332236-001/photo/young-male-football-player-on-pitch-low-section-night.jpg?s=612x612&w=0&k=20&c=6-DJ93_LZfBsG7Rg6Qz8Fo56P2_ud-PTT0Z5JZOZseU="
     },
@@ -215,12 +215,11 @@
     },
   ];
 
+
   let prev = document.getElementById("prevImg");
   prev.setAttribute("src", photos[0].src);
-  
   let active = document.getElementById("activeImg");
   active.setAttribute("src", photos[1].src);
-
   let next = document.getElementById("nextImg"); 
   next.setAttribute("src", photos[2].src);
 
@@ -231,28 +230,49 @@
     let next = document.getElementById("nextImg"); 
         
     let prevImgObj = photos.find((x)=>{return(x.src == prev.src)});
+    let activeImgObj = photos.find((x) => {return(x.src == active.src)});
+    let nextImgObj = photos.find((x) => {return(x.src == next.src)});
 
     let newPrevPosition;
     let newActivePosition;
     let newNextPosition;
-
-    if (prevImgObj.id == 0){
-      newPrevPosition = photos.length -1;
-      newActivePosition = 0;
-      newNextPosition = 1;
-    } else {
-        newPrevPosition = prevImgObj.id - 1;
-        newActivePosition = prevImgObj.id;
-        newNextPosition = prevImgObj.id + 1;
-      };
+    
+    if (prevImgObj.id == 0) {newPrevPosition = photos.length - 1}
+      else {newPrevPosition = prevImgObj.id - 1};
+    if (activeImgObj.id == 0) {newActivePosition = photos.length - 1}
+      else{newActivePosition = activeImgObj.id -1};
+    if (nextImgObj.id == 0){newNextPosition = photos.length - 1}
+      else{newNextPosition = nextImgObj.id - 1};
       
-    prev.setAttribute("src", photos[newPrevPosition].src);
-    active.setAttribute("src", photos[newActivePosition].src);
-    next.setAttribute("src", photos[newNextPosition].src);
-  }
+      prev.setAttribute("src", photos[newPrevPosition].src);
+      active.setAttribute("src", photos[newActivePosition].src);
+      next.setAttribute("src", photos[newNextPosition].src);
+      
+    }
 
   let nextImg = () => {
- 
+    let prev = document.getElementById("prevImg");
+    let active = document.getElementById("activeImg");
+    let next = document.getElementById("nextImg"); 
+        
+    let prevImgObj = photos.find((x)=>{return(x.src == prev.src)});
+    let activeImgObj = photos.find((x) => {return(x.src == active.src)});
+    let nextImgObj = photos.find((x) => {return(x.src == next.src)});
+
+    let newPrevPosition;
+    let newActivePosition;
+    let newNextPosition;
+    
+    if (prevImgObj.id == 9) {newPrevPosition = 0}
+      else {newPrevPosition = prevImgObj.id + 1};
+    if (activeImgObj.id == 9) {newActivePosition = 0}
+      else{newActivePosition = activeImgObj.id + 1};
+    if (nextImgObj.id == 9){newNextPosition = 0}
+      else{newNextPosition = nextImgObj.id + 1};
+      
+      prev.setAttribute("src", photos[newPrevPosition].src);
+      active.setAttribute("src", photos[newActivePosition].src);
+      next.setAttribute("src", photos[newNextPosition].src);
   }
   
   let modalToggle = () => {
