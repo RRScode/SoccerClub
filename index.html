@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Goal Getters Futsal League</title>
+  <body></body>
   <link rel="icon" href="./assets/iconSoccerBall_48x48.png">
   <link rel="stylesheet" href="Style.css">
 </head>
 
-<body>
   <!-- <script src="index.js"></script> -->
   <nav>
     <div id="navRow1">
@@ -46,8 +46,7 @@
         </div>
         <!--navDropdown-->
 
-      </div>
-      <!--navItem-->
+        <!--navItem-->
 
     </div>
     <!--navRow1-->
@@ -63,6 +62,7 @@
 
       <div id="navDropdownContent">
         <a href="#">Home</a>
+      </div>
         <a href="#">About</a>
         <a href="#">Register</a>
         <a href="#">contact</a>
@@ -170,8 +170,12 @@
     x.classList.toggle("showing")
   }
 
-
+  
   const photos = [
+    {
+      id: 0,
+      src: "https://media.gettyimages.com/id/1178753201/photo/a-soccer-player-celebrates-a-goal.jpg?s=612x612&w=0&k=20&c=Poz1uIjc4opwPgOHBIPKOypQ0vpFmsAIQdrtd4zJ5Nc="
+    },
     {
       id: 1,
       src: "https://media.gettyimages.com/id/486401400/photo/children-chasing-soccer-ball-during-a-match.jpg?s=612x612&w=0&k=20&c=Ti414DbxkG8PfV7tzzM-9CmdDh2CgWGQ-fxsU1RA2So="
@@ -209,70 +213,49 @@
       id: 9,
       src: "https://media.gettyimages.com/id/1097457362/photo/skills-with-the-soccer-ball.jpg?s=612x612&w=0&k=20&c=Wl63eH1DJnDKzFQURwNCu807PWDCyThETfmd1Fl5b64="
     },
-    {
-      id: 10,
-      src: "https://media.gettyimages.com/id/1178753201/photo/a-soccer-player-celebrates-a-goal.jpg?s=612x612&w=0&k=20&c=Poz1uIjc4opwPgOHBIPKOypQ0vpFmsAIQdrtd4zJ5Nc="
-    },
   ];
 
   let prev = document.getElementById("prevImg");
-  let prevSrc = photos[0].src;
-  prev.setAttribute("src", prevSrc);
-
-
+  prev.setAttribute("src", photos[0].src);
+  
   let active = document.getElementById("activeImg");
-  let activeSrc = photos[1].src;
-  active.setAttribute("src", activeSrc);
-
+  active.setAttribute("src", photos[1].src);
 
   let next = document.getElementById("nextImg"); 
-  let nextSrc = photos[2].src;
-  next.setAttribute("src",nextSrc);
+  next.setAttribute("src", photos[2].src);
 
 
-  
-  
   let prevImg = () => {
     let prev = document.getElementById("prevImg");
-    let prevFilter = photos.filter((x) => {
-      return(x.src == prev.src);
-    });
-    let currentPrevImg = prevFilter[0];
-    let newPrevPosition;
-    if (currentPrevImg.id - 2 < 0){
-      newPrevPosition = photos.length - 1;
-    } else {newPrevPosition = currentPrevImg.id - 2;};
-    prev.setAttribute("src", photos[newPrevPosition].src);
-
-
     let active = document.getElementById("activeImg");
-    let activeFilter = photos.filter((x) => {
-      return(x.src == active.src);
-    });
-    let currentActiveImg = activeFilter[0];
-    let newActivePosition;
-    if (currentActiveImg.id - 2 < 0){
-      newActivePosition = photos.length - 1;
-    } else {newActivePosition = currentActiveImg.id - 2;};
-    active.setAttribute("src", photos[newActivePosition].src);
+    let next = document.getElementById("nextImg"); 
+        
+    let prevImgObj = photos.find((x)=>{return(x.src == prev.src)});
 
-    let next = document.getElementById("nextImg");
-    let nextFilter = photos.filter((x) => {
-      return(x.src == next.src);
-    });
-    let currentNextImg = nextFilter[0];
+    let newPrevPosition;
+    let newActivePosition;
     let newNextPosition;
-    if (currentNextImg.id - 2 < 0){
-      newNextPosition = photos.length - 1;
-    } else {newNextPosition = currentNextImg.id - 2;};
+
+    if (prevImgObj.id == 0){
+      newPrevPosition = photos.length -1;
+      newActivePosition = 0;
+      newNextPosition = 1;
+    } else {
+        newPrevPosition = prevImgObj.id - 1;
+        newActivePosition = prevImgObj.id;
+        newNextPosition = prevImgObj.id + 1;
+      };
+      
+    prev.setAttribute("src", photos[newPrevPosition].src);
+    active.setAttribute("src", photos[newActivePosition].src);
     next.setAttribute("src", photos[newNextPosition].src);
-   
   }
 
-  let nextImg = () => { }
+  let nextImg = () => {
+ 
+  }
   
   let modalToggle = () => {
-    console.log("itworks");
     let modal = document.getElementById("modal");
     if (modal.style.display = "block") {
       modal.style.display = "none";
@@ -281,7 +264,6 @@
   
   
   let modalImg = () => {
-    console.log("itworks");
     let activeImg = document.getElementById("activeImg")
     let imgX = document.getElementById("imgX");
     let src = imgX.setAttribute("src", activeImg.src);
