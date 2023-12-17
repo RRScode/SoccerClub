@@ -105,8 +105,7 @@ const showNavList = () => {
     }
   }
   
-  
-  let modalImg = () => {
+    let modalImg = () => {
     let activeImg = document.getElementById("activeImg")
     let imgX = document.getElementById("imgX");
     let src = imgX.setAttribute("src", activeImg.src);
